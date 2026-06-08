@@ -1,0 +1,2 @@
+# Ignore large local video files to avoid GitHub's 100MB file size limit
+videos/*.mp4
