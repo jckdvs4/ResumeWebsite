@@ -35,19 +35,24 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', () => {
         let current = '';
         sections.forEach(section => {
+            const id = section.getAttribute('id');
+            if (!id) return;
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
-            if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
-                current = section.getAttribute('id');
+            if (window.pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                current = id;
             }
         });
 
-        navLi.forEach(a => {
-            a.classList.remove('active');
-            if (a.getAttribute('href').includes(current)) {
-                a.classList.add('active');
-            }
-        });
+        if (current) {
+            navLi.forEach(a => {
+                a.classList.remove('active');
+                const href = a.getAttribute('href');
+                if (href && href.startsWith('#') && href.includes(current)) {
+                    a.classList.add('active');
+                }
+            });
+        }
     });
 
     // Handle Video Placeholders

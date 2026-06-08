@@ -461,6 +461,69 @@ footer {
     font-size: 1.2rem;
 }
 
+/* Vertical Video Grid & Items */
+.vertical-video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.vertical-video-container {
+    position: relative;
+    padding-bottom: 177.78%; /* 9:16 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    background: #000;
+}
+
+.vertical-video-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.vertical-video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Style back button and page intro for shorts.html */
+.page-header {
+    text-align: center;
+    padding: 120px 0 20px;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.back-link:hover {
+    color: #fff;
+    transform: translateX(-5px);
+}
+
+.shorts-cta {
+    text-align: center;
+    margin-top: 50px;
+}
+
 /* Hero Subhead */
 .subhead {
     font-size: 1.25rem;
