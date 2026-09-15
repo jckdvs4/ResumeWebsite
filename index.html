@@ -28,6 +28,10 @@
     </nav>
 
     <header class="hero">
+        <video class="hero-bg-video" autoplay loop muted playsinline>
+            <source src="https://www.dropbox.com/scl/fi/n5ntjymn0viinneiuxoul/backgroundwebsite.mp4?rlkey=s6tqace37z4o9ly0cxb0kyoc3&st=m5yo1ahr&raw=1" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
         <div class="container hero-content">
             <h1 class="fade-in">High-Performing Video Content That Drives Results</h1>
             <p class="fade-in delay-1 subhead">Combining creative storytelling with strategic marketing to turn viewers
@@ -43,7 +47,29 @@
         <div class="container">
             <h2 class="section-title">Featured Work</h2>
             <div class="category-grid">
-                <!-- Category 1: Skits -->
+                <!-- Category 1: Events -->
+                <a href="events.html" class="category-card fade-in-section">
+                    <div class="placeholder-thumbnail">
+                        <div class="placeholder-icon"><i class="fab fa-instagram"></i></div>
+                    </div>
+                    <div class="category-info">
+                        <h3>Events & Keynotes</h3>
+                        <span class="category-btn">Explore Events</span>
+                    </div>
+                </a>
+
+                <!-- Category 2: Podcast -->
+                <a href="podcast.html" class="category-card fade-in-section">
+                    <div class="category-thumbnail">
+                        <img src="https://img.youtube.com/vi/C3aCmUD1MFg/maxresdefault.jpg" alt="Podcasts">
+                    </div>
+                    <div class="category-info">
+                        <h3>Podcasts & Highlights</h3>
+                        <span class="category-btn">Explore Podcasts</span>
+                    </div>
+                </a>
+
+                <!-- Category 3: Skits -->
                 <a href="skits.html" class="category-card fade-in-section">
                     <div class="category-thumbnail">
                         <img src="https://img.youtube.com/vi/09w85TyYK_A/maxresdefault.jpg" alt="Skits & Narrative">
@@ -54,7 +80,7 @@
                     </div>
                 </a>
 
-                <!-- Category 2: Music Videos -->
+                <!-- Category 4: Music Videos -->
                 <a href="music-videos.html" class="category-card fade-in-section">
                     <div class="category-thumbnail">
                         <img src="https://img.youtube.com/vi/kXX-cgFdnDU/maxresdefault.jpg" alt="Music Videos">
@@ -62,28 +88,6 @@
                     <div class="category-info">
                         <h3>Music Videos</h3>
                         <span class="category-btn">Explore Music Videos</span>
-                    </div>
-                </a>
-
-                <!-- Category 3: Podcast -->
-                <a href="podcast.html" class="category-card fade-in-section">
-                    <div class="category-thumbnail">
-                        <img src="https://img.youtube.com/vi/Kn9gNYXIyX8/maxresdefault.jpg" alt="Podcasts">
-                    </div>
-                    <div class="category-info">
-                        <h3>Podcasts & Highlights</h3>
-                        <span class="category-btn">Explore Podcasts</span>
-                    </div>
-                </a>
-
-                <!-- Category 4: Shorts -->
-                <a href="shorts.html" class="category-card fade-in-section">
-                    <div class="placeholder-thumbnail">
-                        <div class="placeholder-icon"><i class="fas fa-bolt"></i></div>
-                    </div>
-                    <div class="category-info">
-                        <h3>Shorts & Reels</h3>
-                        <span class="category-btn">Coming Soon</span>
                     </div>
                 </a>
             </div>
@@ -120,14 +124,21 @@
             <div class="about-content">
                 <h2 class="section-title">About Me</h2>
                 <div class="card fade-in-section">
+                    <div class="about-header">
+                        <img src="profile.jpg" alt="Jack Davis" class="profile-avatar-sm" title="Click to view full photo">
+                        <div>
+                            <h3 class="about-name">Jack Davis</h3>
+                            <p class="about-role">Videographer, Editor & Marketer</p>
+                        </div>
+                    </div>
                     <p class="about-text">
-                        I am a videographer, video editor, and Digital Marketer.
+                        I combine technical editing skills with a strong understanding of marketing and what makes people want to keep watching. My goal isn't just to make "cool videos"—it's to create content that actually works for your brand. Whether it's a short-form social clip or a full-length commercial, I focus on retention, pacing, storytelling, and impact.
                     </p>
                     <p class="about-text">
-                        I combine technical editing skills with a deep understanding of marketing principles. My goal
-                        isn't just to make "cool videos" — it's to create assets that work for your business. Whether
-                        it's a short-form social clip or a full-length commercial, I focus on retention, pacing, and
-                        impact.
+                        I started making videos when I was 14 because I've always loved making people laugh and turning everyday moments into something memorable. I started out making funny gaming videos, which eventually turned into comedy vlogs with my friends. Since then, I've worked on a podcast and traveled around the country creating content for a client who hosts leadership events and delivers keynote speeches. Along the way, I've learned how to adapt my editing and storytelling to completely different audiences, platforms, and goals.
+                    </p>
+                    <p class="about-text">
+                        That's the same mindset I bring to every project. A great video shouldn't just look good or sell a product—it should make people feel something. I want to help brands create content that connects with people on a personal level, tells a story worth remembering, and leaves an impression long after the video ends.
                     </p>
                     <div class="skills-grid">
                         <span class="skill-tag">Videography</span>
@@ -137,6 +148,8 @@
                         <span class="skill-tag">Social Media Marketing</span>
                         <span class="skill-tag">Color Grading</span>
                         <span class="skill-tag">Storytelling</span>
+                        <span class="skill-tag">Drone Video</span>
+                        <span class="skill-tag">Graphic Design</span>
                     </div>
                 </div>
             </div>
@@ -185,6 +198,12 @@
             </div>
         </div>
     </section>
+
+    <!-- Image Lightbox Modal -->
+    <div id="image-lightbox" class="lightbox-modal">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" alt="Jack Davis Enlarged Photo">
+    </div>
 
     <footer>
         <div class="container">

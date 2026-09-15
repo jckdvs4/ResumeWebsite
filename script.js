@@ -55,20 +55,48 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Handle Video Placeholders
+    // Handle Video Placeholders (YouTube & Instagram)
     const videoPlaceholders = document.querySelectorAll('.video-placeholder');
     videoPlaceholders.forEach(placeholder => {
         placeholder.addEventListener('click', () => {
             const videoId = placeholder.getAttribute('data-video-id');
+            const instagramId = placeholder.getAttribute('data-instagram-id');
             const iframe = document.createElement('iframe');
-            iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1`);
-            iframe.setAttribute('title', 'YouTube video player');
-            iframe.setAttribute('frameborder', '0');
-            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-            iframe.setAttribute('allowfullscreen', '');
+
+            if (instagramId) {
+                const cleanId = instagramId.replace(/^\/(reel|p)\//, '').replace(/\/$/, '');
+                iframe.setAttribute('src', `https://www.instagram.com/p/${cleanId}/embed`);
+                iframe.setAttribute('title', 'Instagram video player');
+                iframe.setAttribute('frameborder', '0');
+                iframe.setAttribute('scrolling', 'no');
+                iframe.setAttribute('allowtransparency', 'true');
+                iframe.setAttribute('allowfullscreen', '');
+            } else if (videoId) {
+                iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1`);
+                iframe.setAttribute('title', 'YouTube video player');
+                iframe.setAttribute('frameborder', '0');
+                iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+                iframe.setAttribute('allowfullscreen', '');
+            }
 
             placeholder.innerHTML = '';
             placeholder.appendChild(iframe);
         });
     });
+
+    // Handle Profile Avatar Lightbox Modal
+    const avatarSm = document.querySelector('.profile-avatar-sm');
+    const lightbox = document.getElementById('image-lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    if (avatarSm && lightbox && lightboxImg) {
+        avatarSm.addEventListener('click', () => {
+            lightbox.style.display = 'flex';
+            lightboxImg.src = avatarSm.src;
+        });
+
+        lightbox.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+    }
 });
